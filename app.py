@@ -31,10 +31,10 @@ weight = float(input("Enter Weight: "))
 
 userIn = "invalid"
 
-while userIn == "invalid":
+while True:
     unit = input("Select unit (1 for kg or 2 for lbs): ")
     if unit == "1" or unit == "2":
-        userIn = "valid"
+        break
     else:
         print("Invalid input, please try again")
         
