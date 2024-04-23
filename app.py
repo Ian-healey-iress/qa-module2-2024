@@ -15,11 +15,30 @@ print("Hello world")
 
 # Exercise 2
 
-grade = int(input("Enter Grade: "))
+# grade = int(input("Enter Grade: "))
 
-if grade >= 85:
-    print("Distinction")
-elif grade >= 65:
-    print("Pass")
+# if grade >= 85:
+#     print("Distinction")
+# elif grade >= 65:
+#     print("Pass")
+# else:
+#     print("Fail")
+
+
+#  Exercose 3
+
+weight = float(input("Enter Weight: "))
+
+userIn = "invalid"
+
+while userIn == "invalid":
+    unit = input("Select unit (1 for kg or 2 for lbs): ")
+    if unit == "1" or unit == "2":
+        userIn = "valid"
+    else:
+        print("Invalid input, please try again")
+        
+if unit == "1":
+    print(f"Your weight is {weight} kgs, or {round(weight * 2.2, 2)} lbs")
 else:
-    print("Fail")
+    print(f"Your weight is {weight} lbs, or {round(weight / 2.2, 2)} kgs")
