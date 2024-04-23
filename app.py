@@ -25,31 +25,37 @@ print("Hello world")
 #     print("Fail")
 
 
-#  Exercose 3
+#  Exercise 3
 
-while True:     
-    try:
-        weight = float(input("Enter Weight: "))
-        if ValueError == True:
-            raise ValueError
-        else:
-            break
-    except ValueError:
-        print("Please enter a numberic input")
+# while True:     
+#     try:
+#         weight = float(input("Enter Weight: "))
+#         if ValueError == True:
+#             raise ValueError
+#         else:
+#             break
+#     except ValueError:
+#         print("Please enter a numberic input")
 
-userIn = "invalid"
+# userIn = "invalid"
 
-while True:
-    unit = input("Select unit (1 for kg or 2 for lbs): ")
-    if unit == "1" or unit == "2":
-        if unit == "1":
-            converted = round(weight * 2.2, 1)
-            convertedUnit = "lbs"
-        else:
-            converted = round(weight / 2.2, 1)
-            convertedUnit = "kgs"
-        break
-    else:
-        print("Invalid input, please try again")     
+# while True:
+#     unit = input("Select unit (1 for kg or 2 for lbs): ")
+#     if unit == "1" or unit == "2":
+#         if unit == "1":
+#             converted = round(weight * 2.2, 1)
+#             convertedUnit = "lbs"
+#         else:
+#             converted = round(weight / 2.2, 1)
+#             convertedUnit = "kgs"
+#         break
+#     else:
+#         print("Invalid input, please try again")     
 
-print(f"your weight is {converted} {convertedUnit}")
+# print(f"your weight is {converted} {convertedUnit}")
+
+
+# Exercise 4
+
+names = [print(f"{name} is great") for name in [input("Enter name: ") for x in range(5)]]
+
