@@ -4,7 +4,10 @@ print("Hello world")
 
 books = {"author1" : ["book1", "book2", "book3"], "author2" : ["book1", "book2"]}
 
-author = books.get("author1", "nope")
-str = ', '.join(author)
+author = books.get(input("Please enter an author: "), "nope")
 
-print(str)
+if author != "nope":
+    authStr = ', '.join(author)
+    print(authStr)
+else:
+    print("nah homie")
