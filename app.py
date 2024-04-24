@@ -62,57 +62,75 @@ print("Hello world")
 
 # Exercise 5
 
-def findBudget():
-    while True:     
-        try:
-            budget = float(input("Enter Budget: "))
-            if ValueError == True:
-                raise ValueError
-            else:
-                return budget
-        except ValueError:
-            print("Please enter a numberic input")
+# def findBudget():
+#     while True:     
+#         try:
+#             budget = float(input("Enter Budget: "))
+#             if ValueError == True:
+#                 raise ValueError
+#             else:
+#                 return budget
+#         except ValueError:
+#             print("Please enter a numberic input")
 
-def retriveUserIn():
-    while True:
-        try:
-            selected = int(input("Please select 1, 2, or 3: "))
-            if ValueError == True or selected > 3 or selected < 0:
-                raise ValueError
-            else:
-                return selected
-        except ValueError:
-            print("Please enter a valid input (1, 2, or 3)")
+# def retriveUserIn():
+#     while True:
+#         try:
+#             selected = int(input("Please select 1, 2, or 3: "))
+#             if ValueError == True or selected > 3 or selected < 0:
+#                 raise ValueError
+#             else:
+#                 return selected
+#         except ValueError:
+#             print("Please enter a valid input (1, 2, or 3)")
 
-shakes = {
-    "Shake 1" : 10,
-    "Shake 2" : 8.50,
-    "Shake 3" : 6.45
-}
+# shakes = {
+#     "Shake 1" : 10,
+#     "Shake 2" : 8.50,
+#     "Shake 3" : 6.45
+# }
 
-budget = findBudget()
+# budget = findBudget()
 
-print("Menu:")
-counter = 0
-for shake in shakes:
-    counter+=1
-    print(f"{counter}.\t{shake}")
+# print("Menu:")
+# counter = 0
+# for shake in shakes:
+#     counter+=1
+#     print(f"{counter}.\t{shake}")
 
-purchased = []
+# purchased = []
+
+# while True:
+#     selected = retriveUserIn()
+#     if list(shakes.values())[selected - 1] > budget:
+#         print(f"you cant afford that, your budget is only {budget}")
+#     else:
+#         purchased.append(str(list(shakes.keys())[selected - 1]))
+#         budget -= list(shakes.values())[selected - 1]
+#         print("So far you have bought:")
+#         for x in purchased:
+#             print(x)
+#         print(f"you have {round(budget, 1)} left")
+
+#     if min(list(shakes.values())) > budget:
+#         print("You haven't got enough money to buy anything, you have been kicked out")
+#         quit()
+
+# Exercise 6
+
+def oddOrEven(num):
+    if num%2 == 1:
+        return "odd"
+    else:
+        return "even"
 
 while True:
-    selected = retriveUserIn()
-    if list(shakes.values())[selected - 1] > budget:
-        print(f"you cant afford that, your budget is only {budget}")
-    else:
-        purchased.append(str(list(shakes.keys())[selected - 1]))
-        budget -= list(shakes.values())[selected - 1]
-        print("So far you have bought:")
-        for x in purchased:
-            print(x)
-        print(f"you have {round(budget, 1)} left")
-
-    if min(list(shakes.values())) > budget:
-        print("You haven't got enough money to buy anything, you have been kicked out")
-        quit()
-
+    try:
+        num = int(input(f"Please enter a number: "))
+        if ValueError == True:
+            raise ValueError
+        else:
+            print(f"{num} is {oddOrEven(num)}.")
+            break
+    except ValueError:
+        print("Please enter a valid integer input")  
