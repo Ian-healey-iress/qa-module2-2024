@@ -29,7 +29,7 @@ def convertListToString(list):
     days = list[0]
     hours = list[1]
     minutes = list[2]
-    string = f"{round(days, 1)} days, {round(hours, 1)} hours, and {round(minutes, 1)} minutes"
+    string = f"{days} days, {hours} hours, and {round(minutes, 1)} minutes"
     return string
 
 def retrieveUserInputList():
@@ -83,13 +83,14 @@ menu = {
     8 : "Exit."
 }
 
+print("Menu:")
 for x in menu:
     print(f"{list(menu.keys())[x-1]}.\t{list(menu.values())[x-1]}")
 
 while True:
     try:
         selected = int(input("Please select: "))
-        if ValueError == True or selected > 8 or selected < 0:
+        if ValueError == True or selected > 8 or selected < 1:
             raise ValueError
         else:
             if selected == 1:
