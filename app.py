@@ -170,9 +170,9 @@ class Book:
         return f"{self.title} - {self.author} - {self.publisher} - {self.year}"
 
 class BookShelf:
-    bookList = []
     def __init__(self, capacity):
         self.capacity = capacity
+        self.bookList = []
     
     def addBook(self, book):
         if len(self.bookList) < self.capacity:
