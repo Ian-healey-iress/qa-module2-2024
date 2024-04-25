@@ -118,19 +118,113 @@ print("Hello world")
 
 # Exercise 6
 
-def oddOrEven(num):
-    if num%2 == 1:
-        return "odd"
-    else:
-        return "even"
+# def oddOrEven(num):
+#     if num%2 == 1:
+#         return "odd"
+#     else:
+#         return "even"
 
-while True:
-    try:
-        num = int(input(f"Please enter a number: "))
-        if ValueError == True:
-            raise ValueError
+# while True:
+#     try:
+#         num = int(input(f"Please enter a number: "))
+#         if ValueError == True:
+#             raise ValueError
+#         else:
+#             print(f"{num} is {oddOrEven(num)}.")
+#             break
+#     except ValueError:
+#         print("Please enter a valid integer input")  
+
+
+#Harder challenge (stretch goal): 
+
+#Create a Book class and BookShelf class that can be used to manage a collection of books. 
+#Create a Book class that has the following attributes: 
+#title (str), author (str), publisher (str), publication year (int). 
+#The class should also have a str method that returns the book's information in a 
+#formatted string. 
+#Create a BookShelf class that has the following attributes: 
+#capacity (int), list of books (list). 
+#The class should have the following methods: 
+#- add_book: adds a book to the list of books if the shelf is not full 
+#- remove_book: removes a book from the list of books if it exists on the shelf 
+#- find_book_by_title: searches for a book by its title 
+#and returns the book object if found 
+#- find_books_by_author: searches for books by a specific author 
+#and returns a list of book objects if found 
+#The class should also have a str method that returns a string representation 
+#of the books on the shelf. 
+
+#Create four Book objects and add them to a BookShelf object with a capacity of three. 
+#Test the BookShelf object by adding, removing, and finding books by title and author.
+#Print the BookShelf object after each action.
+
+class Book:
+    def __init__(self, title, author, publisher, year):
+        self.title = title
+        self.author = author
+        self.publisher = publisher
+        self.year = year
+
+    def __str__(self):
+        return f"{self.title} - {self.author} - {self.publisher} - {self.year}"
+
+class BookShelf:
+    bookList = []
+    def __init__(self, capacity):
+        self.capacity = capacity
+    
+    def addBook(self, book):
+        if len(self.bookList) < self.capacity:
+            self.bookList.append(book)
+            return f"Added {book.title} to bookshelf"
         else:
-            print(f"{num} is {oddOrEven(num)}.")
-            break
-    except ValueError:
-        print("Please enter a valid integer input")  
+            return "Bookshelf full"
+
+    def removeBook(self, book):
+        if book in self.bookList:
+            self.bookList.remove(book)
+            return f"Removed {book.title} from bookshelf"
+        else:
+            return "Book not in bookshelf"
+    
+    def getBookByTitle(self, title):
+        for b in self.bookList:
+            if b.title == title:
+                book = b
+            else:
+                book = None
+        if not book: 
+            return "no books found"
+        else:
+            return book
+    
+    def getBookByAuthor(self, author):
+        for b in self.bookList:
+            if b.author == author:
+                book = b
+            else:
+                book = None
+        if not book: 
+            return "no books found"
+        else:
+            return book
+    
+    def __str__(self):
+        books = [f"{b.__str__()}" for b in self.bookList]
+        return books
+
+book1 = Book("t1", "a1", "p1", "y1")
+book2 = Book("t2", "a2", "p2", "y2")
+book3 = Book("t3", "a3", "p3", "y3")
+book4 = Book("t4", "a4", "p4", "y4")
+shelf = BookShelf(3)
+
+print(shelf.addBook(book1))
+print(shelf.__str__())
+print(shelf.addBook(book2))
+print(shelf.__str__())
+print(shelf.addBook(book3))
+print(shelf.__str__())
+print(shelf.addBook(book4))
+print(shelf.__str__())
