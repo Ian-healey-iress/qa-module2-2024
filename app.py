@@ -191,24 +191,16 @@ class BookShelf:
     def getBookByTitle(self, title):
         for b in self.bookList:
             if b.title == title:
-                book = b
+                return b
             else:
-                book = None
-        if not book: 
-            return "no books found"
-        else:
-            return book
+                return "no books found"
     
     def getBookByAuthor(self, author):
         for b in self.bookList:
             if b.author == author:
-                book = b
+                return b
             else:
-                book = None
-        if not book: 
-            return "no books found"
-        else:
-            return book
+                return "no books found"
     
     def __str__(self):
         books = [f"{b.__str__()}" for b in self.bookList]
