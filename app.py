@@ -352,6 +352,7 @@ while True:
                 newFile = open("classFeedback.txt", "a")
                 for s in ourClass.studentList:
                     newFile.write(printFeedback(s))
+                    newFile.write("\n")
                 newFile.close()
             elif selected == 5:
                 quit()
