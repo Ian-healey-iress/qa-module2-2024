@@ -277,7 +277,7 @@ def getNumericInput(valueStr):
     while True:
         try:
             userIn = int(input(f"Please enter value for {valueStr}: "))
-            if ValueError == True:
+            if ValueError == True or selected > 5 or selected < 1:
                 raise ValueError
             else:
                 return userIn
