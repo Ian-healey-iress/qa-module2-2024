@@ -223,138 +223,173 @@ print("Hello world")
 
 #  Automated Student Feedback 
 
-class StudentFeedback:
-    def __init__(self, fullname, punctuality, knowledge, contribution, notes):
-        self.fullname = fullname
-        self.punctuality = punctuality
-        self.knowledge = knowledge
-        self.contribution = contribution
-        self.notes = notes
+# class StudentFeedback:
+#     def __init__(self, fullname, punctuality, knowledge, contribution, notes):
+#         self.fullname = fullname
+#         self.punctuality = punctuality
+#         self.knowledge = knowledge
+#         self.contribution = contribution
+#         self.notes = notes
     
-    def __str__(self):
-        return f"{self.fullname} - Punctuality: {self.punctuality}, Knowledge: {self.knowledge}, Contributions: {self.contribution}, Notes: {self.notes}"
+#     def __str__(self):
+#         return f"{self.fullname} - Punctuality: {self.punctuality}, Knowledge: {self.knowledge}, Contributions: {self.contribution}, Notes: {self.notes}"
     
-class Class_:
-    def __init__(self):
-        self.studentList = []
+# class Class_:
+#     def __init__(self):
+#         self.studentList = []
     
-    def addStudent(self, student):
-        if student in self.studentList:
-            return f"{s.fullname}'s feedback has already been added to this class, please remove before reentering."
-        else:
-            self.studentList.append(student)
-            return f"{student.fullname}'s feedback has been added to class list."
+#     def addStudent(self, student):
+#         if student in self.studentList:
+#             return f"{s.fullname}'s feedback has already been added to this class, please remove before reentering."
+#         else:
+#             self.studentList.append(student)
+#             return f"{student.fullname}'s feedback has been added to class list."
     
-    def removeStudent(self, student):
-        for s in self.studentList:
-            if s.fullname == student :
-                self.studentList.remove(student)
-                return f"{student} has been removed from class list."
-            else:
-                return f"{student} was not added to the class list and cannot be removed."
+#     def removeStudent(self, student):
+#         for s in self.studentList:
+#             if s.fullname == student :
+#                 self.studentList.remove(student)
+#                 return f"{student} has been removed from class list."
+#             else:
+#                 return f"{student} was not added to the class list and cannot be removed."
     
-    def getStudentFeedbackByName(self, name):
-        for s in self.studentList:
-            if s.fullname == name:
-                return s
-            else:
-                return f"{name} was not found in the student list for this class."
+#     def getStudentFeedbackByName(self, name):
+#         for s in self.studentList:
+#             if s.fullname == name:
+#                 return s
+#             else:
+#                 return f"{name} was not found in the student list for this class."
             
-    def __str__(self):
-        students = [f"{s.__str__()}" for s in self.studentList]
-        return students
+#     def __str__(self):
+#         students = [f"{s.__str__()}" for s in self.studentList]
+#         return students
     
 
 
-def printFeedback(student):
-    return f"{student.fullname} was {punctualityCriteria.get(student.punctuality)}, showed {knowledgeCriteria.get(student.knowledge)} of the subjects in class, and gave {contributionCriteria.get(student.contribution)} towards class discussion. Some additional notes include: {student.notes}"
+# def printFeedback(student):
+#     return f"{student.fullname} was {punctualityCriteria.get(student.punctuality)}, showed {knowledgeCriteria.get(student.knowledge)} of the subjects in class, and gave {contributionCriteria.get(student.contribution)} towards class discussion. Some additional notes include: {student.notes}"
 
-def printCriteria(criteria):
-    for x in criteria:
-        print(f"{list(criteria.keys())[x-1]}.\t{list(criteria.values())[x-1]}")
+# def printCriteria(criteria):
+#     for x in criteria:
+#         print(f"{list(criteria.keys())[x-1]}.\t{list(criteria.values())[x-1]}")
 
-def getNumericInput(valueStr):
-    while True:
-        try:
-            userIn = int(input(f"Please enter value for {valueStr}: "))
-            if ValueError == True or selected > 5 or selected < 1:
-                raise ValueError
-            else:
-                return userIn
-        except ValueError:
-            print("Please enter a valid integer input")
-
-
-
-punctualityCriteria = {
-    1 : "consistently late",
-    2 : "sometimes late",
-    3 : "occasionally late",
-    4 : "usually on time",
-    5 : "Always on time"
-}
-knowledgeCriteria = {
-    1 : "no knowledge",
-    2 : "little knowledge",
-    3 : "some knowledge",
-    4 : "good amount of knowledge",
-    5 : "exceptional knowledge"
-}
-contributionCriteria = {
-    1 : "no contribution",
-    2 : "little contribution",
-    3 : "some contribution",
-    4 : "good amount of contribution",
-    5 : "exceptional contribution"
-}
-mainMenu = {
-    1 : "Add feedback for a student",
-    2 : "View feedback for a student",
-    3 : "View feedback for whole class",
-    4 : "Print feedback to a file",
-    5 : "Exit program"
-}
+# def getNumericInput(valueStr):
+#     while True:
+#         try:
+#             userIn = int(input(f"Please enter value for {valueStr}: "))
+#             if ValueError == True or selected > 5 or selected < 1:
+#                 raise ValueError
+#             else:
+#                 return userIn
+#         except ValueError:
+#             print("Please enter a valid integer input")
 
 
 
+# punctualityCriteria = {
+#     1 : "consistently late",
+#     2 : "sometimes late",
+#     3 : "occasionally late",
+#     4 : "usually on time",
+#     5 : "Always on time"
+# }
+# knowledgeCriteria = {
+#     1 : "no knowledge",
+#     2 : "little knowledge",
+#     3 : "some knowledge",
+#     4 : "good amount of knowledge",
+#     5 : "exceptional knowledge"
+# }
+# contributionCriteria = {
+#     1 : "no contribution",
+#     2 : "little contribution",
+#     3 : "some contribution",
+#     4 : "good amount of contribution",
+#     5 : "exceptional contribution"
+# }
+# mainMenu = {
+#     1 : "Add feedback for a student",
+#     2 : "View feedback for a student",
+#     3 : "View feedback for whole class",
+#     4 : "Print feedback to a file",
+#     5 : "Exit program"
+# }
 
-ourClass = Class_()
 
-print("Menu:")
-for x in mainMenu:
-    print(f"{list(mainMenu.keys())[x-1]}.\t{list(mainMenu.values())[x-1]}")
 
-while True:
-    try:
-        selected = int(input("Please select: "))
-        if ValueError == True or selected > 5 or selected < 1:
-            raise ValueError
-        else:
-            if selected == 1:
-                fullname = input("Please enter the student's full name: ")
-                printCriteria(punctualityCriteria)
-                punctuality = getNumericInput("punctuality")
-                printCriteria(knowledgeCriteria)
-                knowledge = getNumericInput("knowledge")
-                printCriteria(contributionCriteria)
-                contribution = getNumericInput("contribution")
-                notes = input(f"Please enter any additional notes or general feedback for {fullname}: ")
-                student = StudentFeedback(fullname, punctuality, knowledge, contribution, notes)
-                print(ourClass.addStudent(student))
-            elif selected == 2:
-                fullname = input("Please enter the student's full name: ")
-                print(printFeedback(ourClass.getStudentFeedbackByName(fullname)))
-            elif selected == 3:
-                for s in ourClass.studentList:
-                    print(printFeedback(s))
-            elif selected == 4:
-                open("classFeedback.txt", "w")
-                newFile = open("classFeedback.txt", "a")
-                for s in ourClass.studentList:
-                    newFile.write(printFeedback(s))
-                    newFile.write("\n")
-                newFile.close()
-            elif selected == 5:
-                quit()
-    except ValueError:
-        print("Please enter a valid input (1-5)")
+
+# ourClass = Class_()
+
+# print("Menu:")
+# for x in mainMenu:
+#     print(f"{list(mainMenu.keys())[x-1]}.\t{list(mainMenu.values())[x-1]}")
+
+# while True:
+#     try:
+#         selected = int(input("Please select: "))
+#         if ValueError == True or selected > 5 or selected < 1:
+#             raise ValueError
+#         else:
+#             if selected == 1:
+#                 fullname = input("Please enter the student's full name: ")
+#                 printCriteria(punctualityCriteria)
+#                 punctuality = getNumericInput("punctuality")
+#                 printCriteria(knowledgeCriteria)
+#                 knowledge = getNumericInput("knowledge")
+#                 printCriteria(contributionCriteria)
+#                 contribution = getNumericInput("contribution")
+#                 notes = input(f"Please enter any additional notes or general feedback for {fullname}: ")
+#                 student = StudentFeedback(fullname, punctuality, knowledge, contribution, notes)
+#                 print(ourClass.addStudent(student))
+#             elif selected == 2:
+#                 fullname = input("Please enter the student's full name: ")
+#                 print(printFeedback(ourClass.getStudentFeedbackByName(fullname)))
+#             elif selected == 3:
+#                 for s in ourClass.studentList:
+#                     print(printFeedback(s))
+#             elif selected == 4:
+#                 open("classFeedback.txt", "w")
+#                 newFile = open("classFeedback.txt", "a")
+#                 for s in ourClass.studentList:
+#                     newFile.write(printFeedback(s))
+#                     newFile.write("\n")
+#                 newFile.close()
+#             elif selected == 5:
+#                 quit()
+#     except ValueError:
+#         print("Please enter a valid input (1-5)")
+
+
+#  Dice Exercise
+
+# import dice
+
+# print(dice.rollDice())
+# print(dice.rollDice())
+
+
+# Car sales exercise
+
+# import csv
+
+# companies = []
+# sales = []
+
+
+# with open("output.csv") as csvfile:
+#     reader = csv.reader(csvfile)
+#     next(reader)
+#     for i in reader:
+#         companies.append(i[0])
+#         sales.append([int(x.replace(",", "")) for x in i[1:]])
+
+# print(companies)
+# print(sales)
+
+# # Part 1
+# counter = 0
+# monthlySum = [sum(x) for x in zip(*sales)]
+# for sum in monthlySum:
+#     counter += 1
+#     print(f"Total sales for month {counter} is {sum}")
+
