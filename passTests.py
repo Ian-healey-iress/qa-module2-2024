@@ -18,6 +18,7 @@ class TestPass(unittest.TestCase):
         self.assertEqual(password.containsNums, True)
         self.assertEqual(password.sufficientLength, True)
         self.assertEqual(password.containsSpecialChars, True)
+        self.assertEqual(password.isCommonPass, False)
         
 
 class TestPassCheck(unittest.TestCase):
@@ -25,6 +26,12 @@ class TestPassCheck(unittest.TestCase):
     def test_passCheck_class_exists(self):
         passCheck = PassCheck()
         self.assertIsInstance(passCheck, PassCheck)
+
+    def test_passCheck_methods_callable(self):
+        passCheck = PassCheck()
+        self.assertTrue(callable(getattr(passCheck, "returnScore")))
+        self.assertTrue(callable(getattr(passCheck, "returnImprovements")))
+        self.assertTrue(callable(getattr(passCheck, "checkPassword")))
 
     def test_passCheck_checkPassword_returns_correct_object_type(self):
         password = Pass("Test")
@@ -65,6 +72,11 @@ class TestPassHistory(unittest.TestCase):
     def test_passHistory_class_exists(self):
         passHist = PassHistory()
         self.assertIsInstance(passHist, PassHistory)
+
+    def test_passHistory_methods_callable(self):
+        passHist = PassHistory()
+        self.assertTrue(callable(getattr(passHist, "addPass")))
+        self.assertTrue(callable(getattr(passHist, "getPassHistory")))
 
 if __name__ == '__main__':
     unittest.main()
