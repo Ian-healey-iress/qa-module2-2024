@@ -393,3 +393,32 @@ print("Hello world")
 #     counter += 1
 #     print(f"Total sales for month {counter} is {sum}")
 
+#  Pylint
+
+# """
+# This is a simple module that contains the count function.
+# """
+
+# def count(sequence, item):
+#     """
+#     Counts the number of occurrences of an item in a sequence.
+#     """
+#     y = 0
+#     for n in sequence:
+#         if n == item:
+#             y += 1
+#     return y
+
+# Pytest
+
+# def count(sequence, item):
+#     sum = 0
+#     for n in sequence:
+#         if n == item:
+#             sum += 1
+#     return sum
+
+# def countTests():
+#     assert count([1, 1, 1, 2, 3], 1) == 3
+#     assert count(["x", "y", "z"], "x") == 1
+
